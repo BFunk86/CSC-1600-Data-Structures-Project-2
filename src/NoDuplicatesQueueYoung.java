@@ -7,7 +7,7 @@
  * @author Brandon Young
  */
 // File Name: NoDuplicatesQueueYoung.java
-public class NoDuplicatesQueueYoung<T> implements NoDuplicatesQueueInterfaceYoung<T>, Comparable {
+public class NoDuplicatesQueueYoung<T> implements NoDuplicatesQueueInterfaceYoung<T> {
 
     // Starting size of the Queue and size after the Queue is resized
     private int queueSize = 10;
@@ -45,11 +45,12 @@ public class NoDuplicatesQueueYoung<T> implements NoDuplicatesQueueInterfaceYoun
      */
     private boolean contains(T entry) {
         for (int index = 0; index < items.length; index++) {
-            if(items[index]) {
-
+            // If the item is in the Queue return true
+            if(entry.equals( items[index] )) {
+                return true;
             }
         }
-
+        return false;
     } // end contains
 
     /**
@@ -123,11 +124,12 @@ public class NoDuplicatesQueueYoung<T> implements NoDuplicatesQueueInterfaceYoun
 
     @Override
     public void moveToBack(T newEntry) {
+        // If newEntry is already in Queue
+        if (contains(newEntry)) {
+            if (newEntry.equals( items[back] ))
+        } else {  // If newEntry is not in Queue
 
+        }
     } // end moveToBack
 
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
 } // end NoDuplicateQueueYoung
