@@ -2,7 +2,7 @@
  * CSC 1600 Data Structures
  * CH2 Programming Lab
  *
- * The DriverYoung class demonstrates the new NoDuplicateQueueYoung Queue
+ * The DriverYoung class demonstrates the new NoDuplicatesQueueYoung Queue
  *
  * Consider a new kind of queue that allows only a single copy of an object in the queue. If an object is added to the
  * queue, but it is already there, leave the queue unchanged. This queue has another operation moveToBack that takes
@@ -19,5 +19,10 @@
 public class DriverYoung {
     public static void main(String[] args) {
 
-    }
-}
+    } // end main
+
+} // end DriverYoung
+/*
+ Sample Output:
+
+ */
