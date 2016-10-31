@@ -1,0 +1,20 @@
+20 4
+5 left CAR 123
+6 left TRUCK 134
+5 right CAR 456
+7 left AMBULANCE 456
+15 4
+6 left TRUCK 234
+4 left CAR 890
+10 right FIRETRUCK 784
+6 left VAN 630
+15 4
+5 left POLICE 583
+6 left VAN 927
+6 left TRUCK 194
+5 left CAR 495
+15 4
+5 right CAR 493
+6 right VAN 489
+6 right TRUCK 652
+6 right VAN 489

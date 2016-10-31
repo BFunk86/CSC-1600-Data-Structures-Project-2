@@ -30,21 +30,25 @@ public class NoDuplicatesQueueYoung<T> implements NoDuplicatesQueueInterfaceYoun
 
     @Override
     public void enqueue(T newEntry) {
-        // if array is full resize array
-        if( isFull() ) {
-            resize();
+        // If the item is not in the Queue add it
+        if (!contains(newEntry)) {
+            // if Queue is full resize array
+            if (isFull()) {
+                resize();
+            } // end if
+            // updates the back of the Queue
+            back = (back + 1) % (queueSize);
+            // add the item to the new back
+            items[back] = newEntry;
+            ++count;
         } // end if
-        // updates the back of the Queue
-        back = (back + 1) % (queueSize);
-        // add the item to the new back
-        items[back] = newEntry;
-        ++count;
     }  // end enqueue
 
+
     @Override
-    public T dequeue() throws QueueException {
+    public T dequeue() {
         if( isEmpty() ) {
-            throw new QueueException("QueueException on dequeue: " + "Queue empty");
+            return null;
         } else {
             Object queFront = items[front];
             front = (front + 1) % (queueSize);
@@ -71,7 +75,7 @@ public class NoDuplicatesQueueYoung<T> implements NoDuplicatesQueueInterfaceYoun
 
     @Override
     public void clear() {
-        // resets the Queue
+        // resets the Queue by creating a new Queue and setting the old Queues reference to the new one
         items = new Object[queueSize];
         front = 0;
         back = queueSize - 1;
